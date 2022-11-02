@@ -9,11 +9,11 @@ export default function App() {
       <div className="container">
       <Weather/>
       <footer>
-        This project was coded by <a href="https://alinaradu.art/" target="_blank">Alina
+        This project was coded by <a href="https://alinaradu.art/" target="">Alina
         Radu </a>{""} and is{" "}
         <a
           href="https://github.com/Radu-Alina/my-weather-react-project"
-          target="_blank"
+          target=""
         >
           open-sourced on GitHub
         </a>
