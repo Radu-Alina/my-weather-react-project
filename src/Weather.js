@@ -14,8 +14,7 @@ export default function Weather(props) {
           humidity: response.data.main.humidity,
           date: new Date(response.data.dt * 1000),
           description: response.data.weather[0].description,
-          iconUrl:
-            "https://cdn.search.brave.com/serp/v1/static/icons/weather-light/da7332cc2c82b1a2d97b95a375122bcb1b1b8a4cd86a33ffbd2aa97f09b040bb-01n.svg",
+          iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
           wind: response.data.wind.speed,
           city: response.data.name
         });
