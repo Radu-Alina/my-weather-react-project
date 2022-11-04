@@ -8,7 +8,6 @@ export default function Weather(props) {
     const [weatherData, setWeatherData]= useState({ready:false});
     const [city, setCity]= useState(props.defaultCity);
     function handleResponse(response){
-
         setWeatherData({
           ready: true,
           temperature: response.data.main.temp,
@@ -18,7 +17,7 @@ export default function Weather(props) {
           iconUrl:
             "https://cdn.search.brave.com/serp/v1/static/icons/weather-light/da7332cc2c82b1a2d97b95a375122bcb1b1b8a4cd86a33ffbd2aa97f09b040bb-01n.svg",
           wind: response.data.wind.speed,
-          city: response.data.main.name
+          city: response.data.name
         });
     }
 
@@ -62,7 +61,6 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData}/>
-        
       </div>
      );
     } else{
