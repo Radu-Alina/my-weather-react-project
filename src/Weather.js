@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "./Weather.css";
 
@@ -7,14 +8,15 @@ export default function Weather(props) {
     function handleResponse(response){
 
         setWeatherData({
-          ready:true,
+          ready: true,
           temperature: response.data.main.temp,
           humidity: response.data.main.humidity,
+          date: new Date(response.data.dt * 1000),
           description: response.data.weather[0].description,
-          iconUrl: "https://cdn.search.brave.com/serp/v1/static/icons/weather-light/da7332cc2c82b1a2d97b95a375122bcb1b1b8a4cd86a33ffbd2aa97f09b040bb-01n.svg",
+          iconUrl:
+            "https://cdn.search.brave.com/serp/v1/static/icons/weather-light/da7332cc2c82b1a2d97b95a375122bcb1b1b8a4cd86a33ffbd2aa97f09b040bb-01n.svg",
           wind: response.data.wind.speed,
-          date:response.data.date,
-          city: response.data.main.name
+          city: response.data.main.name,
         });
 
 
@@ -43,7 +45,9 @@ export default function Weather(props) {
         </form>
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>{weatherData.date}</li>
+          <li>
+            <FormattedDate date={weatherData.date} />
+            </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row mt-3">
