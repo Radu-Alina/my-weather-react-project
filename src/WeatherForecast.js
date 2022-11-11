@@ -25,7 +25,7 @@ if (loaded) {
     );
 
 } else {
-        let apiKey = "6e614b93e63f6a9848310bb4ddaf3fe3";
+        let apiKey = "0efb4fc16a9ed98dc0b3aafd8491d6ad";
         let longitude = props.coordinates.lon;
         let latitude = props.coordinates.lat;
         let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
